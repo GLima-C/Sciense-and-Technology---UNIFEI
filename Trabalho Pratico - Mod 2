@@ -1,0 +1,168 @@
+"""
+Sistema de Orçamento para Empresa de Mudanças
+Disciplina: Fundamentos da Programação de Computadores
+Universidade Federal de Itajubá - BCTec
+"""
+
+# ============================================================
+# PARTE 1: COLETA DE DADOS DO CLIENTE
+# ============================================================
+
+print("=" * 60)
+print("   SISTEMA DE ORÇAMENTO - EMPRESA DE MUDANÇAS")
+print("=" * 60)
+
+# Variáveis para dados do cliente
+nome_cliente = input("\nDigite o nome do cliente: ")
+endereco_origem = input("Digite o endereço de origem: ")
+endereco_destino = input("Digite o endereço de destino: ")
+distancia_km = float(input("Digite a distância (em km): "))
+
+# ============================================================
+# PARTE 2: COLETA DE DADOS DOS ITENS
+# ============================================================
+
+print("\n" + "-" * 60)
+print("   INFORMAÇÕES SOBRE OS ITENS")
+print("-" * 60)
+
+# Caixas grandes (dimensões fixas em cm)
+print("\n>>> CAIXAS GRANDES (60x50x50 cm)")
+quantidade_caixas_grandes = int(input("Quantidade de caixas grandes: "))
+
+# Caixas pequenas (dimensões fixas em cm)
+print("\n>>> CAIXAS PEQUENAS (35x25x25 cm)")
+quantidade_caixas_pequenas = int(input("Quantidade de caixas pequenas: "))
+
+# Geladeira (dimensões em metros)
+print("\n>>> GELADEIRA (em metros)")
+largura_geladeira = float(input("Largura da geladeira (m): "))
+altura_geladeira = float(input("Altura da geladeira (m): "))
+profundidade_geladeira = float(input("Profundidade da geladeira (m): "))
+
+# Máquina de lavar (dimensões em metros)
+print("\n>>> MÁQUINA DE LAVAR (em metros)")
+largura_maquina = float(input("Largura da máquina (m): "))
+altura_maquina = float(input("Altura da máquina (m): "))
+profundidade_maquina = float(input("Profundidade da máquina (m): "))
+
+# Outros móveis (dimensões totais em metros)
+print("\n>>> OUTROS MÓVEIS (em metros)")
+largura_outros = float(input("Largura total (m): "))
+altura_outros = float(input("Altura total (m): "))
+profundidade_outros = float(input("Profundidade total (m): "))
+
+# ============================================================
+# PARTE 3: CÁLCULOS DOS VOLUMES
+# ============================================================
+
+print("\n" + "-" * 60)
+print("   REALIZANDO CÁLCULOS...")
+print("-" * 60)
+
+# Constantes para conversão (cm para m)
+CM_PARA_M = 0.01
+
+# Dimensões das caixas em cm (convertidas para metros)
+# Caixa grande: 60x50x50 cm
+largura_cx_grande_cm = 60
+altura_cx_grande_cm = 50
+profundidade_cx_grande_cm = 50
+
+# Caixa pequena: 35x25x25 cm
+largura_cx_pequena_cm = 35
+altura_cx_pequena_cm = 25
+profundidade_cx_pequena_cm = 25
+
+# Conversão das dimensões das caixas para metros
+largura_cx_grande_m = largura_cx_grande_cm * CM_PARA_M
+altura_cx_grande_m = altura_cx_grande_cm * CM_PARA_M
+profundidade_cx_grande_m = profundidade_cx_grande_cm * CM_PARA_M
+
+largura_cx_pequena_m = largura_cx_pequena_cm * CM_PARA_M
+altura_cx_pequena_m = altura_cx_pequena_cm * CM_PARA_M
+profundidade_cx_pequena_m = profundidade_cx_pequena_cm * CM_PARA_M
+
+# Cálculo do volume de UMA caixa grande (em m³)
+volume_uma_caixa_grande = largura_cx_grande_m * altura_cx_grande_m * profundidade_cx_grande_m
+
+# Cálculo do volume de UMA caixa pequena (em m³)
+volume_uma_caixa_pequena = largura_cx_pequena_m * altura_cx_pequena_m * profundidade_cx_pequena_m
+
+# Cálculo do volume total de TODAS as caixas grandes
+volume_total_caixas_grandes = volume_uma_caixa_grande * quantidade_caixas_grandes
+
+# Cálculo do volume total de TODAS as caixas pequenas
+volume_total_caixas_pequenas = volume_uma_caixa_pequena * quantidade_caixas_pequenas
+
+# Cálculo do volume da geladeira
+volume_geladeira = largura_geladeira * altura_geladeira * profundidade_geladeira
+
+# Cálculo do volume da máquina de lavar
+volume_maquina = largura_maquina * altura_maquina * profundidade_maquina
+
+# Cálculo do volume dos outros móveis
+volume_outros = largura_outros * altura_outros * profundidade_outros
+
+# ============================================================
+# PARTE 4: CÁLCULO DO VOLUME TOTAL DA MUDANÇA
+# ============================================================
+
+volume_total_mudanca = (volume_total_caixas_grandes + 
+                         volume_total_caixas_pequenas + 
+                         volume_geladeira + 
+                         volume_maquina + 
+                         volume_outros)
+
+# ============================================================
+# PARTE 5: CÁLCULO DO ORÇAMENTO
+# ============================================================
+
+# Fórmula: Valor total = volume total × 50 × distância (km)
+TAXA_POR_M3_KM = 50
+valor_total_orcamento = volume_total_mudanca * TAXA_POR_M3_KM * distancia_km
+
+# ============================================================
+# PARTE 6: EXIBIÇÃO DOS RESULTADOS
+# ============================================================
+
+print("\n" + "=" * 60)
+print("   ORÇAMENTO DETALHADO")
+print("=" * 60)
+
+print(f"\n>>> CLIENTE: {nome_cliente}")
+print(f">>> ORIGEM: {endereco_origem}")
+print(f">>> DESTINO: {endereco_destino}")
+print(f">>> DISTÂNCIA: {distancia_km:.2f} km")
+
+print("\n" + "-" * 60)
+print("   DETALHAMENTO DOS VOLUMES")
+print("-" * 60)
+
+print(f"\n• Caixas Grandes ({quantidade_caixas_grandes} unidades):")
+print(f"  Volume unitário: {volume_uma_caixa_grande:.4f} m³")
+print(f"  Volume total: {volume_total_caixas_grandes:.4f} m³")
+
+print(f"\n• Caixas Pequenas ({quantidade_caixas_pequenas} unidades):")
+print(f"  Volume unitário: {volume_uma_caixa_pequena:.4f} m³")
+print(f"  Volume total: {volume_total_caixas_pequenas:.4f} m³")
+
+print(f"\n• Geladeira:")
+print(f"  Volume: {volume_geladeira:.4f} m³")
+
+print(f"\n• Máquina de Lavar:")
+print(f"  Volume: {volume_maquina:.4f} m³")
+
+print(f"\n• Outros Móveis:")
+print(f"  Volume: {volume_outros:.4f} m³")
+
+print("\n" + "-" * 60)
+print("   RESUMO")
+print("-" * 60)
+
+print(f"\n>>> VOLUME TOTAL DA MUDANÇA: {volume_total_mudanca:.4f} m³")
+print(f"\n>>> VALOR FINAL DO ORÇAMENTO: R$ {valor_total_orcamento:.2f}")
+
+print("\n" + "=" * 60)
+print("   OBRIGADO POR USAR NOSSO SISTEMA!")
+print("=" * 60)
