@@ -1,1 +1,124 @@
-##
+# ============================================
+# TEMPLO DA PROGRAMAÇÃO - A JORNADA DE ALEX
+# Fundamentos da Programação de Computadores
+# Prof: Fischer Ferreira
+# ============================================
+
+
+print("🏛️  TEMPLO DA PROGRAMAÇÃO  🏛️")
+print("   A Jornada de Alex - Estruturas de Decisão")
+
+# ============================================
+# FASE 1: Entrada na Câmara das Escolhas
+# ============================================
+print("-" * 50)
+print("🔷 FASE 1: Entrada na Câmara das Escolhas")
+print("-" * 50)
+
+escolha = input("Você quer entrar na Câmara das escolhas? (sim/não): ").lower().strip()
+
+if escolha == "sim":
+    print("✅ Resposta: Bora lá!")
+else:
+    print("❌ Resposta: Volte para fase das variáveis!")
+
+print()
+
+# ============================================
+# FASE 2: Desbloqueio de Portões Lógicos
+# ============================================
+print("-" * 50)
+print("🔷 FASE 2: Desbloqueio de Portões Lógicos")
+print("-" * 50)
+
+chaves = int(input("Quantas chaves mágicas você coletou? "))
+
+if chaves == 3:
+    print("🥉 Resultado: Portão de bronze aberto!")
+elif chaves == 5:
+    print("🥈 Resultado: Portão de prata aberto!")
+elif chaves == 7:
+    print("🥇 Resultado: Portão de ouro aberto!")
+else:
+    print("❌ Resultado: Número incorreto de chaves. Portão permanece fechado.")
+
+print()
+
+# ============================================
+# FASE 3: Verificação do Nível de Força
+# ============================================
+print("-" * 50)
+print("🔷 FASE 3: Verificação do Nível de Força")
+print("-" * 50)
+
+forca = int(input("Qual o nível de força do personagem? "))
+
+if forca > 100:
+    print("💪 Resultado: Níveis aceitáveis de força")
+else:
+    print("⚠️  Resultado: Precisa estudar mais para melhorar seus níveis de força")
+
+print()
+
+# ============================================
+# FASE 4: Escolha do Caminho no Labirinto
+# ============================================
+print("-" * 50)
+print("🔷 FASE 4: Escolha do Caminho no Labirinto")
+print("-" * 50)
+
+print("Opções: floresta | caverna | rio")
+caminho = input("Escolha um caminho: ").lower().strip()
+
+if caminho == "floresta":
+    print("🌲 Resultado: Você foi atacado por robôs-programadores. Volte ao início.")
+elif caminho == "caverna":
+    print("🦇 Resultado: Você encontrou um enigma lógico!")
+elif caminho == "rio":
+    print("🌊 Resultado: Você atravessou com sucesso para a próxima fase!")
+else:
+    print("❓ Resultado: Caminho inválido. Tente novamente.")
+
+print()
+
+# ============================================
+# FASE 5: Cofre Codificado com Adivinhação
+# ============================================
+print("-" * 50)
+print("🔷 FASE 5: Cofre Codificado com Adivinhação")
+print("-" * 50)
+
+senha_secreta = 7
+print("Dica: A senha está entre 1 e 10")
+
+tentativa = int(input("Tente adivinhar a senha: "))
+
+if tentativa == senha_secreta:
+    print("🔓 Resultado: Senha correta! Cofre aberto.")
+elif tentativa < senha_secreta:
+    print("📉 Resultado: Senha muito baixa.")
+else:
+    print("📈 Resultado: Senha muito alta.")
+
+print()
+
+# ============================================
+# FASE 6: Termômetro de Temperatura Digital
+# ============================================
+print("-" * 50)
+print("🔷 FASE 6: Termômetro de Temperatura Digital")
+print("-" * 50)
+
+temperatura = float(input("Digite a temperatura atual (°C): "))
+
+if temperatura < 15:
+    print("❄️  Resultado: Muito frio! Robô congelado.")
+elif temperatura <= 25:
+    print("✅ Resultado: Temperatura ideal. Robô funcionando.")
+else:
+    print("🔥 Resultado: Muito quente! Robô superaquecido.")
+
+print()
+print("=" * 50)
+print("🏁 FIM DA JORNADA")
+print("=" * 50)
