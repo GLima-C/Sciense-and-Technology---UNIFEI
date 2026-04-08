@@ -1,0 +1,160 @@
+# UNIVERSIDADE FEDERAL DE ITAJUBÁ
+# BACHARELADO EM CIÊNCIA E TECNOLOGIA (BCTec)
+# Disciplina: Fundamentos da Programação de Computadores
+# Prof: Fischer Ferreira
+# Trabalho Prático Módulo 3
+
+# ============================================
+# DECLARAÇÃO DAS VARIÁVEIS (NO INÍCIO DO PROGRAMA)
+# ============================================
+A = 10
+B = 10
+
+# ============================================
+# ITEM 1
+# ============================================
+# Verifique se A é maior que 10, se verdade imprima: "A > 10" 
+# e verifique se o A mais B é igual a 20, se verdade imprima: "A + B == 20". 
+# Caso a segunda afirmação não seja verdadeira, imprima: "número não válido".
+
+if A > 10:
+    print("A > 10")
+if A + B == 20:
+    print("A + B == 20")
+else:
+    print("número não válido")
+
+# ============================================
+# ITEM 2
+# ============================================
+# Verifique se A é menor que 10, se verdade imprima: "A < 10", 
+# e verifique se o A mais B é igual a 20, se verdade imprima: "A + B == 20". 
+# Caso nenhuma das afirmações não seja verdadeira, imprima: "número não válido", 
+# (obs: apenas uma impressão é permitida na saída do programa).
+
+if A < 10:
+    print("A < 10")
+elif A + B == 20:
+    print("A + B == 20")
+else:
+    print("número não válido")
+
+# ============================================
+# ITEM 3
+# ============================================
+# Verifique se A é igual a 10, se verdade imprima: "A == 10", 
+# e verifique se o A mais B é igual a 20, se verdade imprima: "A + B == 20". 
+# verifique se o B é igual a 10, se verdade imprima: "B == 10", 
+# (obs: todas as três impressões são permitidas na saída do programa).
+
+if A == 10:
+    print("A == 10")
+if A + B == 20:
+    print("A + B == 20")
+if B == 10:
+    print("B == 10")
+
+# ============================================
+# ITEM 4
+# ============================================
+# Verifique se A é maior que 10 ou se A mais B é igual a 20, se verdade imprima: "número válido". 
+# Caso as afirmações não sejam verdadeiras, verificar se A é igual B, caso verdade imprima: (A é igual B); 
+# caso contrario: verificar se A e B são diferentes de 10; caso não seja verdade imprima: "número não válido".
+
+if A > 10 or A + B == 20:
+    print("número válido")
+elif A == B:
+    print("A é igual B")
+elif A != 10 and B != 10:
+    pass  # Condição satisfeita, não imprime nada
+else:
+    print("número não válido")
+
+# ============================================
+# ITEM 5
+# ============================================
+# Verifique se A é maior que 10, se verdade imprima: "A > 10" caso não seja, imprima: "A <= 10". 
+# Verifique se A mais B é igual a 20, se verdadeiro, imprima: "A + B == 20", caso não seja imprima: "A + B != 20".
+
+if A > 10:
+    print("A > 10")
+else:
+    print("A <= 10")
+
+if A + B == 20:
+    print("A + B == 20")
+else:
+    print("A + B != 20")
+
+# ============================================
+# ITEM 6
+# ============================================
+# Verifique se A é maior que 10 e verifique se A mais B é igual a 20, se verdadeiro, imprima: "A + B == 20''. 
+# Caso as afirmações não forem verdadeiras imprima: "número não válido".
+
+if A > 10 and A + B == 20:
+    print("A + B == 20")
+else:
+    print("número não válido")
+
+# ============================================
+# ITEM 7
+# ============================================
+# Verifique se A é maior que 10 se não for verifique se A mais B é igual a 20, imprima: "A + B == 20''. 
+# Caso A não seja maior que 10 e A mais B for diferente de 20, imprima: "número não válido".
+
+if A > 10:
+    pass  # Não imprime nada se A > 10
+elif A + B == 20:
+    print("A + B == 20")
+else:
+    print("número não válido")
+
+# ============================================
+# ITEM 8
+# ============================================
+# Verifique se A é maior que 10 imprima: "A > 10" ou verifique se A mais B é igual a 20, imprima: "A + B == 20'', 
+# caso as afirmações não sejam verdadeiras, imprima: "números não válidos". 
+# Sejam as afirmações anteriores falsas ou verdadeiras imprima: "Sejam bem-vindos à disciplina de Técnicas de Programação".
+
+if A > 10:
+    print("A > 10")
+elif A + B == 20:
+    print("A + B == 20")
+else:
+    print("números não válidos")
+
+print("Sejam bem-vindos à disciplina de Técnicas de Programação")
+
+# ============================================
+# ITEM 9
+# ============================================
+# Verifique se o valor de A é maior que 10 ou se a soma de A e B é igual a 20. 
+# Se pelo menos uma dessas afirmações for verdadeira, imprima "número válido". 
+# Caso contrário, verifique se A é igual a B. Se for verdade, imprima "A é igual B". 
+# Se A e B são diferentes de 10 e A for menor que 10, imprima "A é menor que 10". 
+# Caso nenhuma das afirmações anteriores seja verdadeira, imprima "número não válido".
+
+if A > 10 or A + B == 20:
+    print("número válido")
+elif A == B:
+    print("A é igual B")
+elif A != 10 and B != 10 and A < 10:
+    print("A é menor que 10")
+else:
+    print("número não válido")
+
+# ============================================
+# ITEM 10
+# ============================================
+# Verifique se o valor de A é maior que 10 ou se a soma de A e B é igual a 20. 
+# Se pelo menos uma dessas afirmações for verdadeira, imprima "números válidos". 
+# Caso contrário, imprima "número não válido". 
+# Em qualquer caso, imprima "Olá pessoal do BCTec".
+
+if A > 10 or A + B == 20:
+    print("números válidos")
+else:
+    print("número não válido")
+
+print("Olá pessoal do BCTec")
