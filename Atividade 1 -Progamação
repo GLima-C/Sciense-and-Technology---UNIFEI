@@ -1,0 +1,130 @@
+1 - # Solicitando as informações ao usuário
+nome = input("Digite seu nome:")
+idade = input("Digite sua idade: ")
+cidade = input("Digite a cidade onde você mora: ")
+
+nome=str(nome)
+idade=int(idade)
+cidade=str(cidade)
+
+print("Olá, " + nome + "! Você tem " + str(idade) + " anos e mora em " + cidade + ".")  
+
+#Roda só com Ctrol F5 - RuDebug
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+2 nome= "Gabriel"
+idade= 29
+altura= 1.82
+
+nome=str(nome)
+idade=int(idade)
+altura=float(altura)
+
+print("Nome", {nome})
+print("Idade", {idade})
+print("Altura", {altura})
+
+
+3- 
+idade=29
+nome = "Gabriel"
+idade = 29
+altura = 1.82
+programador = True
+
+idade=int(idade)
+nome= str(nome)
+altura =float(altura)
+programador =bool(programador)
+
+print("Os tipos de VAriaveis")
+print("idade", {idade})
+print("nome", {nome})
+print("altura", {altura})
+print("programador", {programador})
+
+#ok
+4 - 
+numero1 = 10
+numero2 = 5
+Soma = numero1 + numero2
+Subtração = numero1 - numero2
+Multiplicação = numero1 * numero2   
+divisao = numero1 / numero2
+print(f"Soma: {Soma}") 
+print(f"Subtração: {Subtração}")
+print(f"Multiplicação: {Multiplicação}")
+print(f"Divisão: {divisao}")
+
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+5- nome = input("Informe o nome do aluno: ")
+Matricula = input("Informe a matrícula do aluno: ")
+print(f"Nome do aluno: {nome}")
+print(f"Matrícula do aluno: {Matricula}")
+
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+
+6 - primeiro_nome = input("Digite seu primeiro nome: ")
+ultimo_nome = input("Digite seu último nome: ")
+
+nome_completo = f"{primeiro_nome} {ultimo_nome}"
+
+print(f"Nome completo: {nome_completo}")
+
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+7 - numero1=input("Digite um numero inteiro: ")
+numro2=input("Digite outro numero inteiro: ")
+
+n1=int(numero1)
+n2=int(numro2)
+soma = n1 + n2
+print(f"A soma dos numeros é: {soma}")
+
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+8-a=1 ,b=2 ,c=3
+print(a,b,c)
+
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+9-x=10
+y=20
+
+if (x < y):
+    print(f"x={y}, y={x}")
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+10-x = input("Digite um valor para x: ")
+y = input("Digite um valor para y: ")
+z = input("Digite um valor para z: ")
+
+x=int(x)
+y=int(y)
+z=int(z)
+
+soma =(x+y+z)
+multiplicacao = (x*y*z)
+media= (soma/3)
+
+print  ("A soma dos valores é:", {soma})
+print ("A multiplicação dos valores é:", {multiplicacao})
+print ("A média dos valores é:", {media})
+
+
+# Feito por: Gabriel Lima Cavalcant de Souza - 2026014677
+
+
+
+
+
+
+
