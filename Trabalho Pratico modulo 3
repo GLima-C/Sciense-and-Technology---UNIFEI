@@ -16,11 +16,13 @@ B = 10
 # Verifique se A é maior que 10, se verdade imprima: "A > 10" 
 # e verifique se o A mais B é igual a 20, se verdade imprima: "A + B == 20". 
 # Caso a segunda afirmação não seja verdadeira, imprima: "número não válido".
+#Explicação a==10 é Verificação, exemplo if a=10 a==10 é TRUE  ; a=10 é atribuição
 
 if A > 10:
     print("A > 10")
 if A + B == 20:
-    print("A + B == 20")
+    print("A + B == 20")  
+
 else:
     print("número não válido")
 
@@ -34,7 +36,7 @@ else:
 
 if A < 10:
     print("A < 10")
-elif A + B == 20:
+elif A + B == 20: ->POUPA O TRABALHO DE CRIAR MAIS UM IF E ELSE, POIS A PODE SER12 E B PODE SE 8
     print("A + B == 20")
 else:
     print("número não válido")
