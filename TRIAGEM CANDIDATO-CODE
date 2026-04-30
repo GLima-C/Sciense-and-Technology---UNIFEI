@@ -1,1 +1,123 @@
+# Sistema de Triagem para Bolsa Estudantil - EducaMais
 
+# Coleta de dados
+nome = input("Nome do candidato: ")
+idade = int(input("Idade: "))
+renda_familiar = float(input("Renda familiar mensal: "))
+qtd_pessoas = int(input("Quantidade de pessoas no grupo familiar: "))
+nota = float(input("Nota da prova de seleção: "))
+faltas = int(input("Quantidade de faltas no último ano: "))
+escola_publica = input("Cursou ensino médio em escola pública? (S/N): ").upper()
+projeto_social = input("Participou de projeto social/extensão? (S/N): ").upper()
+
+# Cálculo da renda por pessoa
+renda_por_pessoa = renda_familiar / qtd_pessoas
+
+# Lista para controle do resumo final
+status_etapas = []
+
+print("\n--- RESULTADO DA TRIAGEM ---")
+
+# Etapa 1 – Verificação inicial
+atendeu_e1 = False
+if idade >= 16:
+    print("Candidato com idade mínima permitida")
+    if nota >= 60:
+        print("Nota mínima atendida")
+        atendeu_e1 = True
+    else:
+        print("Candidato não atingiu a nota mínima")
+status_etapas.append("Etapa 1: Atendida" if atendeu_e1 else "Etapa 1: Não Atendida")
+
+# Etapa 2 – Enquadramento preliminar
+atendeu_e2 = True
+if escola_publica == 'S':
+    print("Grupo prioritário por escola pública")
+elif renda_por_pessoa <= 700:
+    print("Grupo prioritário por baixa renda")
+else:
+    print("Candidato fora dos critérios prioritários")
+    atendeu_e2 = False
+status_etapas.append("Etapa 2: Atendida" if atendeu_e2 else "Etapa 2: Não Atendida")
+
+# Etapa 3 – Indicadores independentes
+indicadores = 0
+if idade == 18:
+    print("Candidato com 18 anos")
+    indicadores += 1
+if nota == 100:
+    print("Nota máxima na prova")
+    indicadores += 1
+if faltas == 0:
+    print("Frequência perfeita")
+    indicadores += 1
+status_etapas.append("Etapa 3: Atendida" if indicadores > 0 else "Etapa 3: Não Atendida")
+
+# Etapa 4 – Validação complementar do perfil
+atendeu_e4 = False
+if nota > 85 or renda_por_pessoa <= 500:
+    print("Candidato com perfil acadêmico-social favorável")
+    atendeu_e4 = True
+else:
+    if nota == renda_por_pessoa:
+        print("Valor da nota coincide com a renda por pessoa")
+    elif nota != 60 and faltas != 10:
+        print("Candidato sem coincidências críticas")
+    else:
+        print("Candidato em situação de atenção")
+status_etapas.append("Etapa 4: Atendida" if atendeu_e4 else "Etapa 4: Não Atendida")
+
+# Etapa 5 – Desempenho e frequência
+# Desempenho
+if nota > 80:
+    print("Desempenho elevado")
+    e5_desempenho = True
+else:
+    print("Desempenho regular ou insuficiente")
+    e5_desempenho = False
+# Frequência
+if faltas <= 5:
+    print("Boa frequência")
+    e5_freq = True
+else:
+    print("Frequência comprometida")
+    e5_freq = False
+status_etapas.append("Etapa 5: Atendida" if (e5_desempenho and e5_freq) else "Etapa 5: Não Atendida")
+
+# Etapa 6 – Análise condicionada ao desempenho principal
+atendeu_e6 = False
+if nota > 90:
+    print("Candidato de alto desempenho")
+    atendeu_e6 = True
+elif renda_por_pessoa <= 800:
+    print("Candidato elegível por vulnerabilidade econômica")
+    atendeu_e6 = True
+else:
+    print("Candidato sem destaque acadêmico ou social")
+status_etapas.append("Etapa 6: Atendida" if atendeu_e6 else "Etapa 6: Não Atendida")
+
+# Etapa 7 – Classificação final de prioridade
+if nota >= 90:
+    print("Prioridade alta")
+    status_etapas.append("Etapa 7: Atendida (Prioridade Alta)")
+elif renda_por_pessoa <= 800:
+    print("Prioridade média")
+    status_etapas.append("Etapa 7: Atendida (Prioridade Média)")
+elif nota != 60 and faltas != 10 and projeto_social == 'S':
+    print("Prioridade por participação social")
+    status_etapas.append("Etapa 7: Atendida (Participação Social)")
+else:
+    print("Prioridade baixa")
+    status_etapas.append("Etapa 7: Não Atendida (Prioridade Baixa)")
+
+# Etapa 8 – Mensagem obrigatória
+print("Fim da triagem do candidato")
+status_etapas.append("Etapa 8: Atendida")
+
+# Resumo Geral
+print("\n" + "="*30)
+print(f"RESUMO DA TRIAGEM: {nome}")
+print("="*30)
+for etapa in status_etapas:
+    print(etapa)
+print("="*30)
